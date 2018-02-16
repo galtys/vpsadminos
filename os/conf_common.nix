@@ -14,6 +14,8 @@
     openssh
     osctl
     osctld
+    osctl-env-exec
+    rake
     ruby
     ];
 
