@@ -4,8 +4,8 @@ self: super:
     src = super.fetchFromGitHub {
       owner = "vpsfreecz";
       repo = "lxcfs";
-      rev = "d6a82867e7d4a24a3d432eb1d3e4cc17d01534cc";
-      sha256 = "11x7165cas5s4zddjgnlyjrfx38wb2vqdan4ws5b0yzfn13ddqlj";
+      rev = "c79013c19482127aac287ed557b5bff5537fea35";
+      sha256 = "1ilpyvz9cvwprwshanfsbb2f837mwarqak4zsyb7fz9pi6y4yiw1";
     };
 
     postFixup = ''

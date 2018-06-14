@@ -147,6 +147,19 @@ in
     "service/lxcfs/run".source = pkgs.writeScript "lxcfs" ''
       #!/bin/sh
       mkdir -p /var/lib/lxcfs
+      mkdir -p /var/log
+      
+      # Close STDOUT file descriptor
+      exec 1<&-
+      # Close STDERR FD
+      exec 2<&-
+
+      # Open STDOUT as $LOG_FILE file for read and write.
+      exec 1<>/var/log/lxcfs.output
+
+      # Redirect STDERR to STDOUT
+      exec 2>&1
+
       exec ${pkgs.lxcfs}/bin/lxcfs -l /var/lib/lxcfs
     '';
 
